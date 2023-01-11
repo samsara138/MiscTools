@@ -1,0 +1,34 @@
+#!/bin/python3
+
+import math
+import os
+import time
+
+def make_string(sample, length):
+    full_string = sample * math.floor(length / len(sample))
+    remain = length - len(full_string)
+    print(remain)
+    full_string += sample[:remain]
+    return full_string
+
+def send_string(string):
+    time.sleep(0.1)
+    for char in string:
+        time.sleep(0.005)
+        os.system(f"xdotool type {char}")
+
+def main():
+    length = int(input("Length of string you want to send: "))
+    sample = input("String sample (empty for default sample: ")
+    sample = "1234567890" if len(sample) == 0 else sample
+    full_string = make_string(sample, length)
+    for i in range(3,0,-1):
+        print(f"Sending in {i}")
+        time.sleep(1)
+    print("Sending!")
+    send_string(full_string)
+
+    
+
+if __name__ == "__main__":
+	main()

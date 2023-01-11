@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+import os
+import time
+
+def main():
+	if len(sys.argv) != 2:
+		print("Usage: simulated_print.py [string_to_print]")
+		exit(0)
+
+	time.sleep(0.1)
+	for char in sys.argv[1]:
+		time.sleep(0.01)
+		os.system(f"xdotool type {char}")
+
+if __name__ == "__main__":
+	main()
