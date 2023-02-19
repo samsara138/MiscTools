@@ -33,5 +33,3 @@ alias UVic="ssh xiangl@linux.csc.uvic.ca"
 echo
 echo display forward to windows
 export DISPLAY=127.0.0.1:0
-
-. "$HOME/.cargo/env"
